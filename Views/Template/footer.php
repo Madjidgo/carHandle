@@ -10,9 +10,9 @@
 </footer>
 
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-<script src="js/plugins.js"></script>
-<script src="js/main.js"></script>
+<script>window.jQuery || document.write('<script src="Assets/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+<script src="Assets/js/plugins.js"></script>
+<script src="Assets/js/main.js"></script>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
@@ -23,7 +23,7 @@
     r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
     ga('create','UA-XXXXX-X','auto');ga('send','pageview');
 </script>
-<script type="text/javascript">
+<script src="Assets/js/bootstrap.min.js"></script>
 
 </script>
 </body>
