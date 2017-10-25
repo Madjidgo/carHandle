@@ -64,6 +64,37 @@ class VehiculeManager
     return new Vehicule($vehicules);
   }
 
+/**
+ * [add description]
+ * @param [type] $vehicules [description]
+ */
+  public function add($vehicules){
+    $req = $this->_db->prepare('INSERT INTO Vehicule(km,mark,whell,power) VALUES( :km,:mark,:whell,:power)');
+
+    $req->bindValue(':km', $vehicules->km());
+    $req->bindValue(':mark', $vehicules->mark());
+    $req->bindValue(':whell', $vehicules->whell());
+    $req->bindValue(':power', $vehicules->power());
+
+    $req->execute();
+  }
+
+/**
+ * [update description]
+ * @param  [type] $vehicules [description]
+ * @return [type]            [description]
+ */
+  public function update($vehicules){
+    $req = $this->_db->prepare('UPDATE Vehicule SET km = :km,mark = :mark , whell = :mark, power = :power WHERE id = :id');
+    $req->bindValue(':km', $vehicules->km());
+    $req->bindValue(':mark', $vehicules->mark());
+    $req->bindValue(':whell', $vehicules->whell());
+    $req->bindValue(':power', $vehicules->power());
+    $req->bindValue(':id', $vehicules->id());
+
+    $req->execute();
+  }
+
 
 
 }
