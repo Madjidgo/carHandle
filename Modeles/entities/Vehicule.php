@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
  abstract class Vehicule{
                         protected $id;
                         protected $km;
@@ -38,6 +40,7 @@ $this->hydrate($data);
       */
      public function getId()
      {
+
          return $this->id;
      }
 
@@ -78,6 +81,7 @@ $this->hydrate($data);
       */
      public function setId($id)
      {
+        $id = (int)$id;
          $this->id = $id;
      }
 
@@ -86,6 +90,7 @@ $this->hydrate($data);
       */
      public function setKm($km)
      {
+       $km = (int)$km;
          $this->km = $km;
      }
 
@@ -102,6 +107,7 @@ $this->hydrate($data);
       */
      public function setPower($power)
      {
+       $power = (int)$power;
          $this->power = $power;
      }
 
@@ -110,9 +116,10 @@ $this->hydrate($data);
       */
      public function setWhell($whell)
      {
+       $whell = (int)$whell;
          $this->whell = $whell;
      }
 
-     
+
 
 }
