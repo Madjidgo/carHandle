@@ -25,6 +25,5 @@
 </script>
 <script src="Assets/js/bootstrap.min.js"></script>
 
-</script>
 </body>
 </html>

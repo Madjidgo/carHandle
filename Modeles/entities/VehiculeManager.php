@@ -45,7 +45,6 @@ class VehiculeManager
   $req->execute();
 
   $vehicules = $req->fetchall(PDO::FETCH_ASSOC);
-    var_dump($vehicules);
   return $vehicules;
   }
 
@@ -69,18 +68,16 @@ class VehiculeManager
  * @param [type] $vehicules [description]
  */
   public function add($vehicules){
-    $req = $this->_db->prepare('INSERT INTO Vehicule(km,mark,whell,power,helmet,food) VALUES( :km,:mark,:whell,:power,helmet,food)');
+    // var_dump($vehicules);
+    $req = $this->_db->prepare('INSERT INTO Vehicule(km,mark,whell,powwer,helmet,food) VALUES( :km,:mark,:whell,:powwer,:helmet,:food)');
 
 
     $req->bindValue(':km', $vehicules->getKm(), PDO::PARAM_INT);
     $req->bindValue(':mark', $vehicules->getMark());
     $req->bindValue(':whell', $vehicules->getWhell(), PDO::PARAM_INT);
-    $req->bindValue(':power', $vehicules->getPower(), PDO::PARAM_INT);
-    $req-bindValue(':helmet',$vehicules->getHelmet());
-    $req-bindValue(':food',$vehicules->getFood());
-
-
-
+    $req->bindValue(':powwer', $vehicules->getPowwer(), PDO::PARAM_INT);
+    $req->bindValue(':helmet',$vehicules->getHelmet());
+    $req->bindValue(':food',$vehicules->getFood());
 
     $req->execute();
   }
@@ -109,7 +106,8 @@ class VehiculeManager
  * @param  [type] $vehicules [description]
  * @return [type]            [description]
  */
-  public function delete($vehicules){
+  public function delete($vehicules)
+  {
     $req = $this->_db->prepare('DELETE FROM Vehicule WHERE id = :id');
     $req->bindValue(':id',$vehicules,PDO::PARAM_INT);
 

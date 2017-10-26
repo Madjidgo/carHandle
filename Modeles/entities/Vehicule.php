@@ -1,12 +1,12 @@
 <?php
 
 declare(strict_types=1);
- abstract class Vehicule{
+ /*abstract*/ class Vehicule{
                         protected $id;
                         protected $km;
                         protected $mark;
                         protected $whell;
-                        protected $power;
+                        protected $powwer;
                         protected $helmet;
                         protected $food;
 
@@ -65,9 +65,9 @@ $this->hydrate($data);
      /**
       * @return mixed
       */
-     public function getPower()
+     public function getPowwer()
      {
-         return $this->power;
+         return $this->powwer;
      }
 
      /**
@@ -126,10 +126,10 @@ $this->hydrate($data);
      /**
       * @param mixed $power
       */
-     public function setPower($power)
+     public function setPowwer($powwer)
      {
-       $power = (int)$power;
-         $this->power = $power;
+       $powwer = (int)$powwer;
+         $this->powwer = $powwer;
      }
 
      /**
@@ -146,7 +146,7 @@ $this->hydrate($data);
       */
      public function setHelmet($helmet)
      {
-       $helmet->helmet = $helmet;
+       $this->helmet = $helmet;
      }
 
      /**
@@ -155,7 +155,7 @@ $this->hydrate($data);
       */
      public function setFood($food)
      {
-       $food->food = $food;
+       $this->food = $food;
      }
 
 
