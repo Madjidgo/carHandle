@@ -18,42 +18,62 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-      <header class="jumbotron jumbotron-fluid mb-5 mainColor colorWhite">
-    <div class="container">
-      <h1 class="display-3">CarHandle</h1>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+      <div class="jumbotron">
+    <h1 class="display-3">CARHANDLE</h1>
+    <p class="lead">Shop.</p>
+    <hr class="my-4">
+
+
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Create</button>
 
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+              <h5 class="modal-title text-center" id="exampleModalLabel">New Cars</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
+
               <form action="" method="post">
+
                 <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Recipient:</label>
+                  <label for="recipient-name" name="mark" class="col-form-label">Mark:</label>
                   <input type="text" class="form-control" id="recipient-name">
                 </div>
+
                 <div class="form-group">
-                  <label for="message-text" class="col-form-label">Message:</label>
-                  <textarea class="form-control" id="message-text"></textarea>
+                  <label for="message-text1" name="km" class="col-form-label">Km:</label>
+                    <input type="number" class="form-control" id="message-text1">
                 </div>
+
                 <div class="form-group">
-                  <label for="message-text1" class="col-form-label">Message:</label>
-                  <textarea class="form-control" id="message-text1"></textarea>
+                  <label for="message-text2"  name="whell" class="col-form-label">Whell:</label>
+                  <input type="number" class="form-control" id="message-text2">
                 </div>
+
                 <div class="form-group">
-                  <label for="message-text2" class="col-form-label">Message:</label>
-                  <textarea class="form-control" id="message-text2"></textarea>
+                  <label for="message-text3"  name="power" class="col-form-label">Power:</label>
+                  <input type="number" class="form-control" id="message-text3">
                 </div>
+
+                <div class="form-group">
+                  <label for="message-text4" name="helmet" class="col-form-label">Helmet:</label>
+                  <input type="text" class="form-control" id="message-text4">
+                </div>
+
+                <div class="form-group">
+                  <label for="message-text5" name="food" class="col-form-label">Food:</label>
+                  <input type="text" class="form-control" id="message-text5">
+                </div>
+
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-primary">Send message</button>
+                  <button type="submit" class="btn btn-primary" data-dismiss="modal">Envoyer</button>
                 </div>
+
               </form>
             </div>
 

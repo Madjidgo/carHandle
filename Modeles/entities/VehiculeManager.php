@@ -69,13 +69,16 @@ class VehiculeManager
  * @param [type] $vehicules [description]
  */
   public function add($vehicules){
-    $req = $this->_db->prepare('INSERT INTO Vehicule(km,mark,whell,power) VALUES( :km,:mark,:whell,:power)');
+    $req = $this->_db->prepare('INSERT INTO Vehicule(km,mark,whell,power,helmet,food) VALUES( :km,:mark,:whell,:power,helmet,food)');
 
 
     $req->bindValue(':km', $vehicules->getKm(), PDO::PARAM_INT);
     $req->bindValue(':mark', $vehicules->getMark());
     $req->bindValue(':whell', $vehicules->getWhell(), PDO::PARAM_INT);
     $req->bindValue(':power', $vehicules->getPower(), PDO::PARAM_INT);
+    $req-bindValue(':helmet',$vehicules->getHelmet());
+    $req-bindValue(':food',$vehicules->getFood());
+
 
 
 
@@ -88,12 +91,14 @@ class VehiculeManager
  * @return [type]            [description]
  */
   public function update($vehicules){
-    $req = $this->_db->prepare('UPDATE Vehicule SET km = :km,mark = :mark , whell = :mark, power = :power WHERE id = :id');
+    $req = $this->_db->prepare('UPDATE Vehicule SET km = :km,mark = :mark , whell = :mark helmte = :helmet, food = :food power = :power WHERE id = :id');
 
     $req->bindValue(':km', $vehicules->getKm(), PDO::PARAM_INT);
     $req->bindValue(':mark', $vehicules->getMark());
     $req->bindValue(':whell', $vehicules->getWhell(), PDO::PARAM_INT);
     $req->bindValue(':power', $vehicules->getPower(), PDO::PARAM_INT);
+    $req-bindValue(':helmet',$vehicules->getHelmet());
+    $req-bindValue(':food',$vehicules->getFood());
     $req->bindValue(':id', $vehicules->getId(),PDO::PARAM_INT);
 
     $req->execute();

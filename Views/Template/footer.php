@@ -3,7 +3,7 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<footer class="jumbotron jumbotron-fluid mt-5 mainColor colorWhite">
+<footer class="jumbotron jumbotron mt-5 mainColor colorWhite">
 <div class="container">
 <h3>Made in Simplon</h3>
 </div>

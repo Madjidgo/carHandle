@@ -7,6 +7,8 @@ declare(strict_types=1);
                         protected $mark;
                         protected $whell;
                         protected $power;
+                        protected $helmet;
+                        protected $food;
 
 public function __construct(array $data){
 
@@ -77,6 +79,25 @@ $this->hydrate($data);
      }
 
      /**
+      * [getHelmet description]
+      * @return [type] [description]
+      */
+     public function getHelmet()
+     {
+        return $this->helmet;
+     }
+
+     /**
+      * [getFood description]
+      * @return [type] [description]
+      */
+     public function getFood()
+       {
+          return $this->food;
+       }
+
+
+     /**
       * @param mixed $id
       */
      public function setId($id)
@@ -118,6 +139,23 @@ $this->hydrate($data);
      {
        $whell = (int)$whell;
          $this->whell = $whell;
+     }
+     /**
+      * [setHelmet description]
+      * @param [type] $helmet [description]
+      */
+     public function setHelmet($helmet)
+     {
+       $helmet->helmet = $helmet;
+     }
+
+     /**
+      * [setFood description]
+      * @param [type] $food [description]
+      */
+     public function setFood($food)
+     {
+       $food->food = $food;
      }
 
 
