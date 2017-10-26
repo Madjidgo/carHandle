@@ -18,7 +18,10 @@ if (isset($_POST['km']) && isset($_POST['mark']) && isset($_POST['powwer']) && i
   header("location: index.php");
 }
 
-
+/**
+ * [else description]
+ * @var [type]
+ */
 else if (isset($_POST['delete']))
 {
   $delete = $_POST['id'];
@@ -26,15 +29,16 @@ else if (isset($_POST['delete']))
   header ("Location: index.php");
 }
 
-// /**
-//  * [if description]
-//  * @var [type]
-//  */
-// if(isset($_POST['km']) && isset($_POST['mark']) && isset($_POST['powwer']) && isset($_POST['whell']) && isset($_POST['helmet']) && isset($_POST['food']) && isset($_POST['id']))
-// {
-//   $vehicule = new Vehicule($_POST);
-// $maneger->update($vehicule);
-// }
+/**
+ * [if description]
+ * @var [type]
+ */
+
+else if(isset($_POST['km']) && isset($_POST['mark']) && isset($_POST['powwer']) && isset($_POST['whell']) && isset($_POST['helmet']) && isset($_POST['food']) && isset($_POST['id']))
+{
+  $vehicule = new Vehicule($_POST);
+$maneger->update($vehicule);
+}
 
 
 

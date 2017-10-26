@@ -24,13 +24,15 @@ foreach ($vehicules as $key => $value) {
         <p class="card-text">helmet:<?php echo $value['helmet'] ?></p>
         <p class="card-text">food:<?php echo $value['food'] ?></p>
 
+        <div class="row">
         <form action="index.php" method="post">
 			     <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
 			     <input class="btn btn-primary" type="submit" name="delete" value="supprimer">
          </form>
-         
-        <a href="#" class="btn btn-primary">voir</a>
+
+        <a href="#" class="btn btn-danger">voir</a>
       </div>
+    </div>
     </div>
   </div>
 
