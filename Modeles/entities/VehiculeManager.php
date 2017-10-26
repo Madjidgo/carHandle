@@ -71,10 +71,17 @@ class VehiculeManager
   public function add($vehicules){
     $req = $this->_db->prepare('INSERT INTO Vehicule(km,mark,whell,power) VALUES( :km,:mark,:whell,:power)');
 
+<<<<<<< HEAD
     $req->bindValue(':km', $vehicules->getKm(), PDO::PARAM_INT);
     $req->bindValue(':mark', $vehicules->getMark());
     $req->bindValue(':whell', $vehicules->getWhell(), PDO::PARAM_INT);
     $req->bindValue(':power', $vehicules->getPower(), PDO::PARAM_INT);
+=======
+    $req->bindValue(':km', $vehicules->km());
+    $req->bindValue(':mark', $vehicules->mark());
+    $req->bindValue(':whell', $vehicules->whell());
+    $req->bindValue(':power', $vehicules->power());
+>>>>>>> b14f19b4a5f7bd9bca970a553b73a24dbf4a5eda
 
     $req->execute();
   }
@@ -86,6 +93,7 @@ class VehiculeManager
  */
   public function update($vehicules){
     $req = $this->_db->prepare('UPDATE Vehicule SET km = :km,mark = :mark , whell = :mark, power = :power WHERE id = :id');
+<<<<<<< HEAD
     $req->bindValue(':km', $vehicules->getKm(), PDO::PARAM_INT);
     $req->bindValue(':mark', $vehicules->getMark());
     $req->bindValue(':whell', $vehicules->getWhell(), PDO::PARAM_INT);
@@ -94,6 +102,17 @@ class VehiculeManager
 
     $req->execute();
   }
+=======
+    $req->bindValue(':km', $vehicules->km());
+    $req->bindValue(':mark', $vehicules->mark());
+    $req->bindValue(':whell', $vehicules->whell());
+    $req->bindValue(':power', $vehicules->power());
+    $req->bindValue(':id', $vehicules->id());
+
+    $req->execute();
+  }
+
+>>>>>>> b14f19b4a5f7bd9bca970a553b73a24dbf4a5eda
 
 /**
  * [delete description]
