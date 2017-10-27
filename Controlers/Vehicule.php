@@ -7,17 +7,25 @@ $manager = new VehiculeManager($db);
  * @var [type]
  */
 
-if (isset($_POST['km']) && isset($_POST['mark']) && isset($_POST['powwer']) && isset($_POST['whell']) && isset($_POST['helmet']) && isset($_POST['food']))
-{
-  foreach($_POST as $key=>$value)
-  {
-    $vehicule_post[$key]=filter_var($value, FILTER_SANITIZE_STRING);
+if (isset($_POST['km']) && isset($_POST['mark']) && isset($_POST['powwer']) && isset($_POST['whell']) && isset($_POST['helmet']) && isset($_POST['food']) && isset($_POST['type'])){
+
+  if($_POST['type'] == 'Moto') {
+    $type = new Moto($_POST);
+    $manager->add($type);
   }
-  $vehicule = new Vehicule($vehicule_post);
-  $manager->add($vehicule);
+
+  else if($_POST['type'] == 'Truc') {
+      $type = new Truc($_POST);
+      $manager->add($type);
+}
+  else if($_POST['type'] == 'Car') {
+      $type = new Car($_POST);
+      $manager->add($type);
+
+
   header("location: index.php");
 }
-
+}
 /**
  * [else description]
  * @var [type]
@@ -34,19 +42,30 @@ else if (isset($_POST['delete']))
  * @var [type]
  */
 
-else if(isset($_POST['km']) && isset($_POST['mark']) && isset($_POST['powwer']) && isset($_POST['whell']) && isset($_POST['helmet']) && isset($_POST['food']) && isset($_POST['id']))
+ else if(isset($_POST['km']) && isset($_POST['mark']) && isset($_POST['powwer']) && isset($_POST['whell']) &&  isset($_POST['id']))
 {
-  $vehicule = new Vehicule($_POST);
-$maneger->update($vehicule);
+
+  if(isset($_POST['helmet']) && $_POST['type'] == 'Moto') {
+    $type = new Moto($_POST);
+    $manager->update($type);
+  }
+
+  else if( isset($_POST['food']) && $_POST['type'] == 'Truc') {
+      $type = new Truc($_POST);
+      $manager->update($type);
+}
+  else if($_POST['type'] == 'Car') {
+      $type = new Car($_POST);
+      $manager->update($type);
+
+
+  header("location: index.php");
+}
 }
 
 
 
-
-
-
 $vehicules = $manager->getList();
-
 
 
 require 'Views/Vehicule.php';

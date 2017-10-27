@@ -7,6 +7,7 @@ declare(strict_types=1);
                         protected $mark;
                         protected $whell;
                         protected $powwer;
+                        protected $type;
 
 
 public function __construct(array $data){
@@ -75,6 +76,15 @@ $this->hydrate($data);
      public function getWhell()
      {
          return $this->whell;
+
+      }
+      /**
+       * [getType description]
+       * @return [type] [description]
+       */
+     public function getType()
+     {
+       return $this->type;
      }
 
 
@@ -122,6 +132,12 @@ $this->hydrate($data);
      {
        $whell = (int)$whell;
          $this->whell = $whell;
+     }
+
+     public function setType($type)
+     {
+
+         $this->type = $type;
      }
 
 

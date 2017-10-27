@@ -21,10 +21,11 @@
 
     <body>
         <header>
-      <div class="jumbotron">
-    <h1 class="display-3">CARHANDLE</h1>
-    <p class="lead">Shop.</p>
-    <hr class="my-4">
+        <section class="container">
+          <div class="jumbotron">
+            <h3 class="display-3">CARHANDLE</h3>
+            <p class="lead">Shop.</p>
+            <hr class="my-4">
 
 
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Create</button>
@@ -72,6 +73,19 @@
                   <input type="text" name="food" class="form-control" id="message-text5">
                 </div>
 
+
+                  <div class="form-group">
+                    <label for="exampleSelect1">Select</label>
+                    <select class="form-control" name="type" id="exampleSelect1">
+                      <option value="Moto">Moto</option>
+                      <option value="Car">Car</option>
+                      <option value="Truc">Truc</option>
+                    </select>
+                  </div>
+
+
+
+
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   <input type="submit" class="btn btn-danger"  value="Envoyer">
@@ -84,4 +98,5 @@
         </div>
       </div>
     </div>
+  </section>
   </header>

@@ -60,7 +60,7 @@ class VehiculeManager
     ));
     $vehicules = $req->fetch(PDO::FETCH_ASSOC);
 
-    return new Vehicule($vehicules);
+    return new $vehicules['type']($vehicules);
   }
 
 /**
@@ -68,19 +68,32 @@ class VehiculeManager
  * @param [type] $vehicules [description]
  */
   public function add($vehicules){
-    // var_dump($vehicules);
-    $req = $this->_db->prepare('INSERT INTO Vehicule(km,mark,whell,powwer,helmet,food) VALUES( :km,:mark,:whell,:powwer,:helmet,:food)');
+
+
+    $req = $this->_db->prepare('INSERT INTO Vehicule(km,mark,whell,powwer,helmet,food, type) VALUES( :km,:mark,:whell,:powwer,:helmet,:food, :type)');
 
 
     $req->bindValue(':km', $vehicules->getKm(), PDO::PARAM_INT);
     $req->bindValue(':mark', $vehicules->getMark());
     $req->bindValue(':whell', $vehicules->getWhell(), PDO::PARAM_INT);
     $req->bindValue(':powwer', $vehicules->getPowwer(), PDO::PARAM_INT);
-    $req->bindValue(':helmet',$vehicules->getHelmet());
-    $req->bindValue(':food',$vehicules->getFood());
+    $req->bindValue(':type', $vehicules->getType());
 
-    $req->execute();
-  }
+
+    if ($vehicules->getType() == 'Truc'){
+      $req->bindValue(':food',$vehicules->getFood());
+    } else $req->bindValue(':food', null);
+
+
+
+ if ($vehicules->getType() == 'Moto'){
+    $req->bindValue(':helmet',$vehicules->getHelmet());
+  } else $req->bindValue(':helmet', null);
+
+
+  $req->execute();
+}
+
 
 /**
  * [update description]
@@ -88,15 +101,25 @@ class VehiculeManager
  * @return [type]            [description]
  */
   public function update($vehicules){
-    $req = $this->_db->prepare('UPDATE Vehicule SET km = :km,mark = :mark , whell = :mark helmte = :helmet, food = :food power = :power WHERE id = :id');
+    $req = $this->_db->prepare('UPDATE Vehicule SET km = :km, mark = :mark , whell = :whell, helmet = :helmet, food = :food, powwer = :powwer WHERE id = :id');
 
     $req->bindValue(':km', $vehicules->getKm(), PDO::PARAM_INT);
     $req->bindValue(':mark', $vehicules->getMark());
     $req->bindValue(':whell', $vehicules->getWhell(), PDO::PARAM_INT);
-    $req->bindValue(':power', $vehicules->getPower(), PDO::PARAM_INT);
-    $req-bindValue(':helmet',$vehicules->getHelmet());
-    $req-bindValue(':food',$vehicules->getFood());
+    $req->bindValue(':powwer', $vehicules->getPowwer(), PDO::PARAM_INT);
     $req->bindValue(':id', $vehicules->getId(),PDO::PARAM_INT);
+
+
+    if ($vehicules->getType() == 'Truc'){
+      $req->bindValue(':food',$vehicules->getFood());
+    } else $req->bindValue(':food', null);
+
+
+
+ if ($vehicules->getType() == 'Moto'){
+    $req->bindValue(':helmet',$vehicules->getHelmet());
+  } else $req->bindValue(':helmet', null);
+
 
     $req->execute();
 
