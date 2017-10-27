@@ -5,7 +5,7 @@
 <!-- Add your site or application content here -->
 <footer class="jumbotron jumbotron mt-5 mainColor colorWhite">
 <div class="container">
-<h3>Made in Simplon</h3>
+<h3>©MadjidGo 2017</h3>
 </div>
 </footer>
 

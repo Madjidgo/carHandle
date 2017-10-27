@@ -103,6 +103,7 @@ class VehiculeManager
   public function update($vehicules){
     $req = $this->_db->prepare('UPDATE Vehicule SET km = :km, mark = :mark , whell = :whell, helmet = :helmet, food = :food, powwer = :powwer WHERE id = :id');
 
+
     $req->bindValue(':km', $vehicules->getKm(), PDO::PARAM_INT);
     $req->bindValue(':mark', $vehicules->getMark());
     $req->bindValue(':whell', $vehicules->getWhell(), PDO::PARAM_INT);
