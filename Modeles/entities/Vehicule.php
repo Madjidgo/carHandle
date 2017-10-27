@@ -1,14 +1,13 @@
 <?php
 
 declare(strict_types=1);
- /*abstract*/ class Vehicule{
+ abstract class Vehicule{
                         protected $id;
                         protected $km;
                         protected $mark;
                         protected $whell;
                         protected $powwer;
-                        protected $helmet;
-                        protected $food;
+
 
 public function __construct(array $data){
 
@@ -78,25 +77,9 @@ $this->hydrate($data);
          return $this->whell;
      }
 
-     /**
-      * [getHelmet description]
-      * @return [type] [description]
-      */
-     public function getHelmet()
-     {
-        return $this->helmet;
-     }
-
-     /**
-      * [getFood description]
-      * @return [type] [description]
-      */
-     public function getFood()
-       {
-          return $this->food;
-       }
 
 
+// SETTERS
      /**
       * @param mixed $id
       */
@@ -140,23 +123,7 @@ $this->hydrate($data);
        $whell = (int)$whell;
          $this->whell = $whell;
      }
-     /**
-      * [setHelmet description]
-      * @param [type] $helmet [description]
-      */
-     public function setHelmet($helmet)
-     {
-       $this->helmet = $helmet;
-     }
 
-     /**
-      * [setFood description]
-      * @param [type] $food [description]
-      */
-     public function setFood($food)
-     {
-       $this->food = $food;
-     }
 
 
 

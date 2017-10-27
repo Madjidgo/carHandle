@@ -43,8 +43,10 @@ $maneger->update($vehicule);
 
 
 
+
+
 $vehicules = $manager->getList();
 
 
 
-require 'Views/Template/Vehicule.php';
+require 'Views/Vehicule.php';
