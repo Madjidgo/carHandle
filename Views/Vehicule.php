@@ -1,6 +1,6 @@
 <?php
 // header
-  include("header.php");
+  include("Views/Template/header.php");
  ?>
  <div class="container">
 <div class="row">
@@ -48,5 +48,5 @@ foreach ($vehicules as $key => $value) {
 
 <!-- footer -->
  <?php
-   include("footer.php");
+   include("Views/Template/footer.php");
   ?>
