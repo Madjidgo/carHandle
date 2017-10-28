@@ -7,7 +7,7 @@ $manager = new VehiculeManager($db);
  * @var [type]
  */
 
-if (isset($_POST['km']) && isset($_POST['mark']) && isset($_POST['powwer']) && isset($_POST['whell']) && isset($_POST['helmet']) && isset($_POST['food']) && isset($_POST['type'])){
+if (isset($_POST['km']) && isset($_POST['mark']) && isset($_POST['powwer']) && isset($_POST['whell']) && isset($_POST['helmet']) && isset($_POST['food']) && isset($_POST['type']) && isset($_POST['sunroof'])){
 
   if($_POST['type'] == 'Moto') {
     $type = new Moto($_POST);
@@ -54,7 +54,7 @@ else if (isset($_POST['delete']))
       $type = new Truc($_POST);
       $manager->update($type);
 }
-  else if($_POST['type'] == 'Car') {
+  else if(isset($_POST['sunroof']) && $_POST['type'] == 'Car') {
       $type = new Car($_POST);
       $manager->update($type);
 

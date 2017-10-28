@@ -5,9 +5,6 @@ class Moto extends Vehicule{
 
 protected $helmet;
 
-
-
-
     /**
      * Get the value of Helmet
      *

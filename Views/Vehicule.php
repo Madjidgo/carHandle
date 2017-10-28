@@ -13,8 +13,8 @@ foreach ($vehicules as $key => $value) {
 
 
  ?>
-
-  <div class="col-sm-4 my-1 ">
+  <!-- cads -->
+  <div class="col-sm-4 my-2 ">
     <div class="card">
       <div class="card-block">
         <h3 class="card-title"><?php echo $value['mark'] ?></h3>
@@ -23,17 +23,18 @@ foreach ($vehicules as $key => $value) {
         <p class="card-text">power:<?php echo $value['powwer'] ?></p>
         <p class="card-text">helmet:<?php echo $value['helmet'] ?></p>
         <p class="card-text">food:<?php echo $value['food'] ?></p>
+        <p class="card-text">sunroof:<?php echo $value['sunroof'] ?></p>
 
         <div class="row offset-1 ">
 
+          <!-- input hidden -->
         <form action="index.php" method="post">
 			     <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
-
-			     <input class="btn btn-primary" type="submit" name="delete" value="supprimer">
+			     <button  class="btn btn-primary sup" type="submit" name="delete" value="delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
          </form>
 
 
-        <a class="btn btn-danger" href="Voiture.php?id=<?php echo $value['id']?> "role="button">Voir</a>
+        <a class="btn btn-danger env" href="Voiture.php?id=<?php echo $value['id']?> "role="button"><i class="fa fa-plus" aria-hidden="true"></i></a>
       </div>
     </div>
     </div>

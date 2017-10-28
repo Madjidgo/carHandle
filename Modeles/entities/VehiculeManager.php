@@ -70,7 +70,7 @@ class VehiculeManager
   public function add($vehicules){
 
 
-    $req = $this->_db->prepare('INSERT INTO Vehicule(km,mark,whell,powwer,helmet,food, type) VALUES( :km,:mark,:whell,:powwer,:helmet,:food, :type)');
+    $req = $this->_db->prepare('INSERT INTO Vehicule(km,mark,whell,powwer,helmet,food,sunroof,type) VALUES( :km,:mark,:whell,:powwer,:helmet,:food,:sunroof,:type)');
 
 
     $req->bindValue(':km', $vehicules->getKm(), PDO::PARAM_INT);
@@ -91,6 +91,12 @@ class VehiculeManager
   } else $req->bindValue(':helmet', null);
 
 
+  if ($vehicules->getType() == 'Car'){
+     $req->bindValue(':sunroof',$vehicules->getSunroof());
+   } else $req->bindValue(':sunroof', null);
+
+
+
   $req->execute();
 }
 
@@ -101,7 +107,8 @@ class VehiculeManager
  * @return [type]            [description]
  */
   public function update($vehicules){
-    $req = $this->_db->prepare('UPDATE Vehicule SET km = :km, mark = :mark , whell = :whell, helmet = :helmet, food = :food, powwer = :powwer WHERE id = :id');
+    $req = $this->_db->prepare('UPDATE Vehicule SET km = :km, mark = :mark , whell = :whell, helmet = :helmet, food = :food, powwer = :powwer, sunroof = :sunroof WHERE id = :id');
+    var_dump($req);
 
 
     $req->bindValue(':km', $vehicules->getKm(), PDO::PARAM_INT);
@@ -110,16 +117,22 @@ class VehiculeManager
     $req->bindValue(':powwer', $vehicules->getPowwer(), PDO::PARAM_INT);
     $req->bindValue(':id', $vehicules->getId(),PDO::PARAM_INT);
 
-
+  // Verification truc
     if ($vehicules->getType() == 'Truc'){
       $req->bindValue(':food',$vehicules->getFood());
     } else $req->bindValue(':food', null);
 
 
-
+// Moto
  if ($vehicules->getType() == 'Moto'){
     $req->bindValue(':helmet',$vehicules->getHelmet());
   } else $req->bindValue(':helmet', null);
+
+// Car
+  if ($vehicules->getType() == 'Car'){
+     $req->bindValue(':sunroof',$vehicules->getSunroof());
+   } else $req->bindValue(':sunroof', null);
+
 
 
     $req->execute();

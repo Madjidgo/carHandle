@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="Assets/css/normalize.css">
         <link rel="stylesheet" href="Assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="Assets/css/main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
 
@@ -28,7 +29,7 @@
             <hr class="my-4">
 
 
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Create</button>
+      <button type="button" class="btn btn-danger env" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Create</button>
 
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -73,6 +74,11 @@
                   <input type="text" name="food" class="form-control" id="message-text5">
                 </div>
 
+                <div class="form-group">
+                  <label for="message-text6"  class="col-form-label">Sunroof:</label>
+                  <input type="text" name="sunroof" class="form-control" id="message-text6">
+                </div>
+
 
                   <div class="form-group">
                     <label for="exampleSelect1">Select</label>
@@ -87,8 +93,8 @@
 
 
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <input type="submit" class="btn btn-danger"  value="Envoyer">
+                  <button type="button " class=" btn close " data-dismiss="modal">Close</button>
+                  <input type="submit" class="btn btn-danger env"  value="Envoyer">
                 </div>
 
               </form>
